@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5vna1deoqo7y"]
+
+[ext_resource type="Script" path="res://Bubble.gd" id="1_s6imq"]
+[ext_resource type="Texture2D" uid="uid://dg8q81wrxon3y" path="res://Art/Intermediate/single png/bubble.png" id="1_wheux"]
+[ext_resource type="Texture2D" uid="uid://bqa7uxi33qygx" path="res://Art/Intermediate/single png/bubble_NormalMap.png" id="2_xraqn"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hvwsu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iycsi"]
+transparency = 1
+albedo_texture = ExtResource("1_wheux")
+normal_enabled = true
+normal_scale = 0.4
+normal_texture = ExtResource("2_xraqn")
+texture_filter = 0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_7dur7"]
+
+[node name="Area3D" type="Area3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.553864, 0.773242, 0)
+script = ExtResource("1_s6imq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("QuadMesh_hvwsu")
+surface_material_override/0 = SubResource("StandardMaterial3D_iycsi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_7dur7")
