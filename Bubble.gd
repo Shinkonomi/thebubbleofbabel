@@ -32,7 +32,7 @@ func set_velocity(new_velocity: Vector3) -> void:
 	velocity = new_velocity.normalized() * speed
 	$CollisionShape3D.disabled = true
 	await(1000)
-	$CollisionShape3D.disabled = false
+	#$CollisionShape3D.disabled = false
 
 func _on_body_entered(body: Node) -> void:
 	# Handle collision with enemies
