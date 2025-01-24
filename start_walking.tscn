@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4h26g1bjk12q"]
+
+[ext_resource type="PackedScene" uid="uid://cl3q2sdj8cyg4" path="res://Art/Intermediate/animation/golem/Start Walking.fbx" id="1_epxky"]
+[ext_resource type="Script" path="res://animTest.gd" id="2_n8pa6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m88w7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xiyh1"]
+
+[node name="Start Walking" instance=ExtResource("1_epxky")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(0.00909205, 3.52571, -0.0934948)
+bones/0/rotation = Quaternion(-0.0471683, -0.0416951, -0.011725, 0.997948)
+bones/1/rotation = Quaternion(0.0269191, 0.00169315, 0.00485382, 0.999624)
+bones/2/rotation = Quaternion(0.040926, 0.0033287, 0.0111064, 0.999095)
+bones/3/rotation = Quaternion(0.040926, 0.00332871, 0.0111064, 0.999095)
+bones/4/rotation = Quaternion(-0.175019, 0.00104171, -0.00338723, 0.984559)
+bones/5/rotation = Quaternion(0.116994, 0.0322839, -0.00831049, 0.992573)
+bones/7/rotation = Quaternion(0.529394, 0.571819, -0.482295, 0.400196)
+bones/8/rotation = Quaternion(0.445982, 0.110883, 0.27393, 0.844847)
+bones/9/rotation = Quaternion(-0.160701, 0.649156, 0.166363, 0.724634)
+bones/11/rotation = Quaternion(0.562781, -0.525593, 0.392516, 0.502952)
+bones/12/rotation = Quaternion(0.475793, -0.00220652, -0.163708, 0.864185)
+bones/13/rotation = Quaternion(-0.175913, -0.644142, -0.189825, 0.719793)
+bones/15/rotation = Quaternion(0.121844, 0.041285, 0.991463, -0.0212109)
+bones/16/rotation = Quaternion(-0.135502, 0.00130189, -0.0196716, 0.990581)
+bones/17/rotation = Quaternion(0.44444, -0.0321334, 0.0712439, 0.892393)
+bones/18/rotation = Quaternion(0.377726, -0.114287, 0.0472468, 0.917622)
+bones/20/rotation = Quaternion(-0.0389553, 0.0149723, 0.99906, 0.0117153)
+bones/21/rotation = Quaternion(-0.16339, -0.0014292, 0.0209737, 0.986338)
+bones/22/rotation = Quaternion(0.478841, 0.167334, -0.0895441, 0.857142)
+bones/23/rotation = Quaternion(0.376837, 0.117673, -0.0468849, 0.917578)
+
+[node name="b" parent="Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m88w7")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Skeleton3D/b" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skeleton3D/b/CharacterBody3D" index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.281142, 3.61878, -0.186458)
+shape = SubResource("CapsuleShape3D_xiyh1")
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "mixamo_com"
+script = ExtResource("2_n8pa6")
