@@ -1,15 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyv6wdvife60j"]
+[gd_scene load_steps=8 format=3 uid="uid://dyv6wdvife60j"]
 
-[ext_resource type="Texture2D" uid="uid://cgvi21x76ric6" path="res://Art/Intermediate/other/in progress/Untitled 3.png" id="1_aaiuw"]
 [ext_resource type="Script" path="res://FrogControl.gd" id="1_e5ip8"]
+[ext_resource type="Texture2D" uid="uid://mfbdn5k8abnb" path="res://Art/Intermediate/other/in progress/frog animation/1.png" id="2_cs5j7"]
 [ext_resource type="Script" path="res://LightMove.gd" id="3_7wy6y"]
-[ext_resource type="Script" path="res://FrogAnim.gd" id="3_dj6aj"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_bpdy8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esk5f"]
 transparency = 1
-albedo_texture = ExtResource("1_aaiuw")
+albedo_texture = ExtResource("2_cs5j7")
 texture_filter = 0
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sq5xx"]
@@ -29,7 +28,6 @@ script = ExtResource("1_e5ip8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 mesh = SubResource("QuadMesh_bpdy8")
 surface_material_override/0 = SubResource("StandardMaterial3D_esk5f")
-script = ExtResource("3_dj6aj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_sq5xx")
